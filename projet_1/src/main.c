@@ -1,6 +1,6 @@
 // a) Demander à l'utilisateur de remplir des données sur son logement. 
 // Créer la structure logement qui contient tout les attributs du fichier CSV. 
-// Créer la fonction qui lis dans le fichier CSV et créer un tableau dont la taille sera le nombre de logements du fichier. 
+// Créer la fonction qui lis dans le fichier CSV et créer un tableau dont la taille sera le nombre de logements du fichier. (Utiliser la fonction strtok(string, delimiter) inclus avec string.h)
 // Ce tableau sera rempli d'une structure contenant la structure logement et un entier correspondant à la distance calculée (tab[i].logement && tab[i].distance) 
 // Créer la fonction qui traduit la formule de calcul de distance avec en paramètre l'id du logement X et le tableau. 
 // Stocker les résultats de la formule dans notre tableau. 
