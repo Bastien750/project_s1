@@ -8,4 +8,19 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include<utils.h>
+#include<file.h>
 #include <structure.h>
+
+int main(){
+    int nbrProcess;
+    printf("Entrez le nombre de processus que vous voulez inclure dans l'ordonnanceur : ");
+    scanf("%d\n", &nbrProcess);
+    for (int i = 0; i < nbrProcess; i++)
+    {
+        /* code */
+    }
+    
+}
+
+

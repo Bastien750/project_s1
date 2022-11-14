@@ -8,7 +8,7 @@ OBJ=$(SRC:.c=.o)  # fichiers objet par récupération des .c
 				  # et placement dans les bon répertoires
 PROG=projet_2 # exécutables
 
-all : $(PROG)		# target principal
+all : $(PROG)	clean	# target principal
 $(PROG) : $(OBJ) 	# compilation du programme
 	$(CC) $^ -o $@ $(OPTION)
 
@@ -20,7 +20,7 @@ $(PROG) : $(OBJ) 	# compilation du programme
 .PHONY : clean mrproper print	# cibles sans dépendances à toujours executer
 
 clean :	# nettoyage des fichiers objets pour recompilation totale
-	$(RM) $(OBJ)
+	rm -rf *.o
 
 mrproper :	# nettoyage de tout fichier compilé
 	$(RM) $(PROG) $(OBJ)

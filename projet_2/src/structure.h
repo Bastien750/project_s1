@@ -1,13 +1,13 @@
 #ifndef structure
 #define structure
 
-typedef struct processus{
+typedef struct Proc{
     char nom;
     double time_exec;
     int order;
-} processus;
+} Proc;
 
-typedef processus* Proc ;
+typedef Proc* processus ;
 
 typedef struct Element Element;
 struct Element
