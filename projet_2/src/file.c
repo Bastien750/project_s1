@@ -1,21 +1,15 @@
 // Contient les fonctions pour créer un processus, créer une file et créer un noeud ainsi que les structures processus et file
 #include <stdio.h>
 #include <stdlib.h>
-#include <structure.h>
+#include "structure.h"
 
 File *initialisation()
 {
     File *file = malloc(sizeof(*file));
     Element *element = malloc(sizeof(*element));
-
-    if (file == NULL || element == NULL)
-    {
-        exit(EXIT_FAILURE);
-    }
-    element->process;
+    //element->process = malloc(sizeof(processus));
     element->suivant = NULL;
     file->premier = element;
-
     return file;
 }
 

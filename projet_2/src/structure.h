@@ -2,7 +2,7 @@
 #define structure
 
 typedef struct Proc{
-    char nom;
+    char nom[20];
     double time_exec;
     int order;
 } Proc;
@@ -12,7 +12,7 @@ typedef Proc* processus ;
 typedef struct Element Element;
 struct Element
 {
-    processus process;
+    processus process ;
     Element *suivant;
 };
 
