@@ -84,6 +84,7 @@ int main(){
         scanf("%s", tab[i]->nom);
         printf("Entrez le temps d'execution du processus : ");
         scanf("%lf", &tab[i]->time_exec);
+        //tab[i]->time_exec = rand()%5;
         printf("Entrez la priorite du processus : ");
         scanf("%d", &tab[i]->order);
     }
