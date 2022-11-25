@@ -11,3 +11,39 @@
 // Stocker notre modèle dans le tableau excel (créer une fonction qui le fait)
 
 // d) Exécuter le programme plusieurs fois
+
+#include<stdlib.h>
+#include<stdio.h>
+
+int main(){
+    double *logement_x = malloc(9*(sizeof(double)));
+    printf("Bonjour,\nBienvenu dans ce logiciel qui va vous permettre de trouver le prix de votre logement airBnb!\n");
+    printf("Pouvez vous d'abord entrez le numero de votre logement :");
+    scanf("%lf", logement_x[0]);
+    printf("accomodates :");
+    scanf("%lf", logement_x[1]);
+    printf("bedrooms :");
+    scanf("%lf", logement_x[2]);
+    printf("bathrooms :");
+    scanf("%lf", logement_x[3]);
+    printf("beds :");
+    scanf("%lf", logement_x[4]);
+    printf("price :");
+    scanf("%lf", logement_x[5]);
+    printf("minimum_nights :");
+    scanf("%lf", logement_x[6]);
+    printf("maximum_nights :");
+    scanf("%lf", logement_x[7]);
+    printf("number_of_reviews :");
+    scanf("%lf", logement_x[8]);
+    int size ;
+
+    double **logement_y = malloc(10 * sizeof(double*));
+    for (int i = 0; i < 10; i++)                  //Stat : contient les données des ingredients 
+    {
+        logement_y[i] = malloc(size * sizeof(double)) ;
+    }
+    
+    
+
+}
