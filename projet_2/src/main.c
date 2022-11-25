@@ -21,33 +21,6 @@ void affichage(processus tab[], int size, int count) {
     printf("\n");
 }
 
-/*void swap(processus t[], int i, int j) {
-    processus tmp;
-    tmp = t[i];
-    t[i] = t[j];
-    t[j] = tmp;
-}
-
-void quickSort(processus t[], int first, int last, int size, int count) {
-    int i, j, pivot;
-    if (first < last) {
-        pivot = first;
-        i = first;
-        j = last;       
-        while (i < j) {
-            while (t[i]->time_exec <= t[pivot]->time_exec && i < last) i++;
-            while (t[j]->time_exec > t[pivot]->time_exec) j--;
-            if (i < j) {
-                swap(t, i, j);
-            }
-            count++;
-            affichage(t, size, count);
-        }
-        swap(t, pivot, j) ;
-        quickSort(t, first, j - 1, size, count);
-        quickSort(t, j + 1, last, size, count);
-    }
-}*/
 
 void TriBulle(processus tab[], int size, int count) {
     processus tmp ; bool test;
@@ -75,7 +48,7 @@ int main(){
     processus tab[nbrProcess] ;
     for (int i = 0; i < nbrProcess; i++)
     {
-        tab[i] = malloc(sizeof(processus));
+        tab[i] = MALLOC(Proc);
     }
     for (int i = 0; i < nbrProcess; i++)
     {
@@ -89,9 +62,9 @@ int main(){
         scanf("%d", &tab[i]->order);
     }
     TriBulle(tab, nbrProcess, 0);
-    //quickSort(tab, 0, nbrProcess-1, nbrProcess, 0);
-    File *ordonnanceur = initialisation();
-    for (int i = 0; i < nbrProcess; i++)
+    //quickSort(tab, 0, nbrProcess-1, nbrProcess, 0);    
+    File *ordonnanceur = initialisation(tab[0]);
+    for (int i = 1; i < nbrProcess; i++)
     {
         ajout_activite(ordonnanceur, tab[i]);
     }

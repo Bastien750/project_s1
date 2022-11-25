@@ -1,6 +1,8 @@
 #ifndef structure
 #define structure
 
+#define MALLOC(x)(( x * ) malloc(sizeof(x)))
+
 typedef struct Proc{
     char nom[20];
     double time_exec;

@@ -2,7 +2,7 @@
 #define file
 #include "structure.h"
 
-File *initialisation();
+File *initialisation(processus nvProc);
 void ajout_activite(File *ordonnanceur, processus nvProcess);
 processus defiler(File *ordonnanceur);
 

@@ -19,9 +19,9 @@ void step(File *ordonnanceur){
 }
 
 void run(File *ordonnanceur){
-    do
+    while (ordonnanceur->premier != NULL)
     {
         step(ordonnanceur);
-    } while (ordonnanceur->premier != NULL);
+    } 
     
 }

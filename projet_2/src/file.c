@@ -3,11 +3,11 @@
 #include <stdlib.h>
 #include "structure.h"
 
-File *initialisation()
+File *initialisation(processus nvProc)
 {
-    File *file = malloc(sizeof(*file));
-    Element *element = malloc(sizeof(*element));
-    //element->process = malloc(sizeof(processus));
+    File *file = MALLOC(File);
+    Element *element = MALLOC(Element);
+    element->process = nvProc;
     element->suivant = NULL;
     file->premier = element;
     return file;
