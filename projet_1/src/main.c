@@ -14,9 +14,12 @@
 
 #include<stdlib.h>
 #include<stdio.h>
+#include"utils.h"
+#include"quickSort.h"
 
 int main(){
-    double *logement_x = malloc(9*(sizeof(double)));
+    double *logement_x = malloc(10*(sizeof(double)));
+    int k;
     printf("Bonjour,\nBienvenu dans ce logiciel qui va vous permettre de trouver le prix de votre logement airBnb!\n");
     printf("Pouvez vous d'abord entrez le numero de votre logement :");
     scanf("%lf", logement_x[0]);
@@ -37,13 +40,18 @@ int main(){
     printf("number_of_reviews :");
     scanf("%lf", logement_x[8]);
     int size ;
-
+    count_line(&size);
     double **logement_y = malloc(10 * sizeof(double*));
-    for (int i = 0; i < 10; i++)                  //Stat : contient les données des ingredients 
+    for (int i = 0; i < size; i++)                  //Stat : contient les données des ingredients 
     {
-        logement_y[i] = malloc(size * sizeof(double)) ;
+        logement_y[i] = malloc(10 * sizeof(double)) ;
     }
-    
-    
+    init_logement_y(logement_y);
+    formule_distance(logement_x, logement_y);
+    quickSort(logement_y, 0, size, size, 0);
+    printf("Avec combien de logement voulez-vous comparer le votre :");
+    scanf("%d", &k);
+    logement_x[9]=moyenne_prix(logement_x, logement_y, k);
+    ajout_logement_x(logement_x, size);
 
 }
