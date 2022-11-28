@@ -10,10 +10,10 @@ PROG=projet_1 # exécutables
 
 all : $(PROG)	clean	# target principal
 $(PROG) : $(OBJ) 	# compilation du programme
-	$(CC) $^ -o $@ $(OPTION)
+	$(CC) $^ -o $@ $(OPTION) -lm
 
 %.o : %.c		# compilation des objets
-	$(CC) -c $^ -o $@ $(OPTION)
+	$(CC) -c $^ -o $@ $(OPTION) 
 
 #EXE : $(PROG.exe)
 

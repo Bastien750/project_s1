@@ -14,44 +14,46 @@
 
 #include<stdlib.h>
 #include<stdio.h>
+#include<math.h>
+#include<string.h>
+#include "structure.h"
 #include"utils.h"
-#include"quickSort.h"
 
 int main(){
-    double *logement_x = malloc(10*(sizeof(double)));
+    Logement logement_x = MALLOC(Critere);
     int k;
     printf("Bonjour,\nBienvenu dans ce logiciel qui va vous permettre de trouver le prix de votre logement airBnb!\n");
     printf("Pouvez vous d'abord entrez le numero de votre logement :");
-    scanf("%lf", logement_x[0]);
+    scanf("%lf", &logement_x->id);
     printf("accomodates :");
-    scanf("%lf", logement_x[1]);
+    scanf("%lf", &logement_x->accomodates);
     printf("bedrooms :");
-    scanf("%lf", logement_x[2]);
+    scanf("%lf", &logement_x->bedrooms);
     printf("bathrooms :");
-    scanf("%lf", logement_x[3]);
+    scanf("%lf", &logement_x->bathrooms);
     printf("beds :");
-    scanf("%lf", logement_x[4]);
+    scanf("%lf", &logement_x->beds);
     printf("price :");
-    scanf("%lf", logement_x[5]);
+    scanf("%lf", &logement_x->price);
     printf("minimum_nights :");
-    scanf("%lf", logement_x[6]);
+    scanf("%lf", &logement_x->minimum_nights);
     printf("maximum_nights :");
-    scanf("%lf", logement_x[7]);
+    scanf("%lf", &logement_x->maximum_nights);
     printf("number_of_reviews :");
-    scanf("%lf", logement_x[8]);
-    int size ;
+    scanf("%lf", &logement_x->number_of_reviews);
+    int size=-1;
     count_line(&size);
-    double **logement_y = malloc(10 * sizeof(double*));
-    for (int i = 0; i < size; i++)                  //Stat : contient les données des ingredients 
+    Logement logement_y[size];
+    for (int i = 0; i < size; i++)
     {
-        logement_y[i] = malloc(10 * sizeof(double)) ;
+        logement_y[i]=MALLOC(Critere);
     }
-    init_logement_y(logement_y);
-    formule_distance(logement_x, logement_y);
-    quickSort(logement_y, 0, size, size, 0);
+    init_logement_y(logement_y, size);
+    formule_distance(logement_x, logement_y, size);
+    //quickSort(logement_y, 0, size, size, 0);
     printf("Avec combien de logement voulez-vous comparer le votre :");
     scanf("%d", &k);
-    logement_x[9]=moyenne_prix(logement_x, logement_y, k);
+    logement_x->price=moyenne_prix(logement_y, k);
     ajout_logement_x(logement_x, size);
 
 }
