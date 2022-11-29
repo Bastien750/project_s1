@@ -3,6 +3,13 @@
 #include <stdlib.h>
 #include "structure.h"
 
+/**
+ * It creates a new file and adds the new process to it
+ * 
+ * @param nvProc the process to add to the queue
+ * 
+ * @return A pointer to a File structure.
+ */
 File *initialisation(processus nvProc)
 {
     File *file = MALLOC(File);
@@ -13,6 +20,12 @@ File *initialisation(processus nvProc)
     return file;
 }
 
+/**
+ * It adds a new process to the end of the queue
+ * 
+ * @param ordonnanceur the queue
+ * @param nvProcess the process to add to the queue
+ */
 void ajout_activite(File *ordonnanceur, processus nvProcess)
 {
     Element *nouveau = malloc(sizeof(*nouveau));
@@ -40,6 +53,14 @@ void ajout_activite(File *ordonnanceur, processus nvProcess)
     }
 }
 
+/**
+ * It takes a pointer to a queue, checks if the queue is empty, if not, it takes the first element of
+ * the queue, puts it in a variable, and then frees the first element of the queue
+ * 
+ * @param ordonnanceur the queue
+ * 
+ * @return A processus struct.
+ */
 processus defiler(File *ordonnanceur)
 {
     if (ordonnanceur == NULL)

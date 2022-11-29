@@ -13,6 +13,13 @@
 #include "structure.h"
 #include <stdbool.h>
 
+/**
+ * It prints the time_exec of each processus in the array
+ * 
+ * @param tab the array of processes
+ * @param size the number of processes
+ * @param count the number of the current iteration
+ */
 void affichage(processus tab[], int size, int count) {
     printf("[%d]: ", count);
     for (int j = 0; j < size; j++) {
@@ -22,6 +29,13 @@ void affichage(processus tab[], int size, int count) {
 }
 
 
+/**
+ * It sorts an array of processus pointers using the bubble sort algorithm
+ * 
+ * @param tab the array of processus
+ * @param size the size of the array
+ * @param count the number of swaps
+ */
 void TriBulle(processus tab[], int size, int count) {
     processus tmp ; bool test;
     //Tri
@@ -41,6 +55,10 @@ void TriBulle(processus tab[], int size, int count) {
 }
 
 
+/**
+ * It's a function that takes a processus array and a number of processus as parameters, then it
+ * creates a queue and adds the processus to it, then it runs the queue
+ */
 int main(){
     int nbrProcess;
     printf("Entrez le nombre de processus que vous voulez inclure dans l'ordonnanceur : ");

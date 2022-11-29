@@ -4,6 +4,12 @@
 #include "file.h"
 #include <unistd.h>
 
+/**
+ * It takes a pointer to a File structure, and if the File is not empty, it takes the first processus
+ * in the File, prints its name and its execution time, and then sleeps for the execution time
+ * 
+ * @param ordonnanceur the queue
+ */
 void step(File *ordonnanceur){
     if (ordonnanceur->premier != NULL)
     {
@@ -18,6 +24,11 @@ void step(File *ordonnanceur){
     }
 }
 
+/**
+ * It runs the scheduler until there are no more processes to run
+ * 
+ * @param ordonnanceur the queue of processes
+ */
 void run(File *ordonnanceur){
     while (ordonnanceur->premier != NULL)
     {
