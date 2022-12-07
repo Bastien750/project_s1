@@ -7,6 +7,13 @@
 
 
 
+/**
+ * It takes a pointer to a Logement struct, and an integer, and then it shuffles the array of Logement
+ * structs
+ * 
+ * @param logement_y is a pointer to a Logement structure
+ * @param size the size of the array
+ */
 void random_tab(Logement *logement_y, int size){
     srand(time(NULL));
     int nbr;
@@ -20,6 +27,15 @@ void random_tab(Logement *logement_y, int size){
     }
 }
 
+/**
+ * It takes a logement_x and a logement_y array, and for each element of the logement_y array, it
+ * calculates the distance between logement_x and logement_y[i] and stores it in
+ * logement_y[i]->final_distance
+ * 
+ * @param logement_x the logement we want to compare to the others
+ * @param logement_y an array of structs
+ * @param size the number of elements in the array
+ */
 void formule_distance(Logement logement_x, Logement *logement_y, int size){
     for (int y = 0; y < size; y++)
     {        
@@ -30,6 +46,12 @@ void formule_distance(Logement logement_x, Logement *logement_y, int size){
     }
 }
 
+/**
+ * It calculates the average price of the kth logement.
+ * 
+ * @param logement_y the array of Logement structs
+ * @param k the number of logements in the array
+ */
 double moyenne_prix(Logement *logement_y, int k){
     double price;
     for (int i = 0; i < k; i++)

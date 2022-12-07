@@ -21,6 +21,9 @@
 #include "quickSort.h"
 #include"change_date.h"
 
+/**
+ * Main function of the project
+ */
 int main(){
     Logement logement_x = MALLOC(Critere);
     int k;

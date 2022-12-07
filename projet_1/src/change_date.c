@@ -5,6 +5,11 @@
 #include<time.h>
 #include "structure.h"
 
+/**
+ * It counts the number of lines in a file
+ * 
+ * @param nbrline number of lines in the file
+ */
 void count_line(int *nbrline){
     FILE* fichier = NULL;
     fichier = fopen("../data/airbnb_donnees_propre.csv", "r"); 
@@ -22,6 +27,12 @@ void count_line(int *nbrline){
     fclose(fichier);  
 }
 
+/**
+ * It reads a csv file and stores the data in a struct
+ * 
+ * @param logement_y is a pointer to a Logement struct
+ * @param size the number of lines in the file
+ */
 void init_logement_y(Logement *logement_y, int size){
     FILE* fichier = NULL;
  
@@ -47,6 +58,12 @@ void init_logement_y(Logement *logement_y, int size){
         fclose(fichier);    
 }
 
+/**
+ * It opens a file, reads the last line of the file, and then writes the last line of the file again
+ * 
+ * @param logement_x a pointer to a Logement struct
+ * @param size the size of the array
+ */
 void ajout_logement_x(Logement logement_x, int size){
     FILE* fichier = NULL;
     fichier = fopen("../data/airbnb_donnees_propre.csv", "r+");   
