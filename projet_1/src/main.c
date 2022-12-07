@@ -19,6 +19,7 @@
 #include "structure.h"
 #include"utils.h"
 #include "quickSort.h"
+#include"change_date.h"
 
 int main(){
     Logement logement_x = MALLOC(Critere);
@@ -51,10 +52,12 @@ int main(){
     }
     init_logement_y(logement_y, size);
     formule_distance(logement_x, logement_y, size);
+    random_tab(logement_y, size);
     quickSort(logement_y, 0, size, size);
-    printf("Avec combien de logement voulez-vous comparer le votre :");
+    printf("Avec combien de logement voulez-vous comparer le votre : ");
     scanf("%d", &k);
     logement_x->price=moyenne_prix(logement_y, k);
+    printf("Le Prix de votre logement compare aux autres devrait etre de : %lf\n", logement_x->price);
     ajout_logement_x(logement_x, size);
 
 }

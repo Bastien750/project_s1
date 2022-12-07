@@ -1,5 +1,6 @@
 #ifndef quicksort
 #define quicksort
+#include "structure.h"
 
 void affichage(int tab[], int size, int count);
 void swap(double **t, int i, int j);
