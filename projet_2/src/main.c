@@ -76,14 +76,16 @@ int main(){
         printf("Entrez le temps d'execution du processus : ");
         scanf("%lf", &tab[i]->time_exec);
         //tab[i]->time_exec = rand()%5;
-        printf("Entrez la priorite du processus : ");
-        scanf("%d", &tab[i]->order);
+        /*printf("Entrez la priorite du processus : ");
+        scanf("%d", &tab[i]->order);*/
     }
     TriBulle(tab, nbrProcess, 0);
     //quickSort(tab, 0, nbrProcess-1, nbrProcess, 0);    
+    tab[0]->order = 0;
     File *ordonnanceur = initialisation(tab[0]);
     for (int i = 1; i < nbrProcess; i++)
     {
+        tab[i]->order = i;
         ajout_activite(ordonnanceur, tab[i]);
     }
     run(ordonnanceur);
