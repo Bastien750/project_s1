@@ -45,6 +45,7 @@ void init_logement_y(Logement *logement_y, int size){
             { 
                 fgets(line, 100,fichier); 
                 logement_y[y]->id = atof(strtok(line, ",")); //strtok separe le char et atof le transforme en double
+                logement_y[y]->accomodates= atof(strtok(NULL, ","));
                 logement_y[y]->bedrooms= atof(strtok(NULL, ","));
                 logement_y[y]->bathrooms= atof(strtok(NULL, ","));
                 logement_y[y]->beds= atof(strtok(NULL, ","));
